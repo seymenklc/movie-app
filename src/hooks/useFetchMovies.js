@@ -1,6 +1,6 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { baseURL, api_key } from "../constants/api";
-import axios from "axios";
 // hooks
 import { useStore } from "../store";
 

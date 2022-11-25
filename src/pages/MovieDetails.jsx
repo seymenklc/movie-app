@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 // hooks
 import { useStore } from "../store";
-import { useFetchMovie } from "../hooks/usFetchMovie";
+import { useFetchMovie } from "../hooks/useFetchMovie";
 import { handleToast } from "../utils/handleToast";
 // components
 import Spinner from '../components/Spinner';
@@ -38,7 +38,7 @@ export default function MovieDetails() {
                 <div className="card-actions justify-between items-center">
                     <div>
                         {movie && genres.map(genre => (
-                            <span key={genre} className="badge ml-2">#{genre}</span>
+                            <span key={genre} className="badge ml-2 p-4">#{genre}</span>
                         ))}
                     </div>
                     {!isFavorited && (

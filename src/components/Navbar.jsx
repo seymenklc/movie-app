@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // hooks
 import { useStore } from "../store";
@@ -10,11 +10,21 @@ export default function Navbar() {
     const { setQueryString } = useStore();
 
     const resetQuery = () => setQuery('');
+
     const handleChange = (e) => setQuery(e.target.value);
+
     const handleClick = () => {
         if (!query) return;
         setQueryString(query);
     };
+
+    useEffect(() => {
+        setQueryString(query);
+    }, [query]);
+
+    useEffect(() => {
+        setQueryString('Avengers');
+    }, []);
 
     return (
         <div className="navbar bg-neutral rounded-md mt-3">
